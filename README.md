@@ -14,3 +14,4 @@ A simple oshgui sdk for counter-strike : global offensive, has a simple renderer
 
 * eternity for the renderer
 * me for putting this together
+* namaszo cus i stole some readme stuff
