@@ -3,7 +3,7 @@
 
 ### osh_sdk
 
-A simple oshgui sdk for counter-strike : global offensive, has a simple renderer and a present and reset hook, everything you would need to draw stuff on your screen, it's also stream proof.
+A simple oshgui sdk for any game, this is just a directx 9 example, has a simple renderer and a present and reset hook, everything you would need to draw stuff on your screen, it's also stream proof. Feel free to do a pr if you want to contribute to the project.
 
 ## Requirements
 
