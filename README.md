@@ -13,5 +13,7 @@ A simple oshgui sdk for any game, this is just a directx 9 example, has a simple
 ## Credits
 
 * eternity for the renderer
+* wzn for sigscan
+* KN4CK3R for oshgui
 * me for putting this together
 * namaszo cus i stole some readme stuff
