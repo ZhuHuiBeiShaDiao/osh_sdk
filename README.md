@@ -3,7 +3,7 @@
 
 ### osh_sdk
 
-A simple oshgui sdk for any game, this is just a directx 9 example, has a simple renderer and a present and reset hook, everything you would need to draw stuff on your screen, it's also stream proof. Feel free to do a pr if you want to contribute to the project.
+A simple oshgui sdk for any game, this is just a directx 9 example, has a simple renderer, an input class, and a present and reset hook, everything you would need to draw stuff on your screen. Feel free to do a PR if you want to contribute to the project.
 
 ## Requirements
 
@@ -16,4 +16,3 @@ A simple oshgui sdk for any game, this is just a directx 9 example, has a simple
 * wzn for sigscan
 * KN4CK3R for oshgui
 * me for putting this together
-* namaszo cus i stole some readme stuff

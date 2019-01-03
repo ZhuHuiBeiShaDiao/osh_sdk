@@ -639,6 +639,7 @@
     <TargetName>oshgui</TargetName>
     <OutDir>$(SolutionDir)Bin\Lib\$(PlatformTarget)\</OutDir>
     <IntDir>$(Configuration)\$(PlatformTarget)\Lib\</IntDir>
+    <LibraryPath>$(SolutionDir)Bin\Lib\$(PlatformTarget);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>oshgui</TargetName>

@@ -77,6 +77,8 @@ namespace OSHGui
 
 			}
 
+			int obj_;
+
 			/**
 			 * Erzeugt ein Any-Objekt, das das angegebene Objekt enthält.
 			 *

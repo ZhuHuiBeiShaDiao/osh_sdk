@@ -15,10 +15,8 @@
 #include <vector>
 #include <map>
 
-namespace OSHGui
-{
-	namespace Drawing
-	{
+namespace OSHGui {
+	namespace Drawing {
 		class Direct3D9Texture;
 		class Direct3D9TextureTarget;
 		class Direct3D9GeometryBuffer;
@@ -26,40 +24,39 @@ namespace OSHGui
 		/**
 		 * Die Direct3D9 Variante des Renderer.
 		 */
-		class OSHGUI_EXPORT Direct3D9Renderer : public Renderer
-		{
+		class OSHGUI_EXPORT Direct3D9Renderer : public Renderer {
 		public:
 			/**
 			 * Konstruktor der Klasse.
 			 *
 			 * \param device Direct3D9 Device
 			 */
-			Direct3D9Renderer(LPDIRECT3DDEVICE9 device);
-			virtual ~Direct3D9Renderer();
+			Direct3D9Renderer( LPDIRECT3DDEVICE9 device );
+			virtual ~Direct3D9Renderer( );
 
 			/**
 			 * Hilfsfunktion, die vor einem D3D Reset aufgerufen werden muss.
 			 */
-			void PreD3DReset();
+			void PreD3DReset( );
 			/**
 			 * Hilfsfunktion, die nach einem D3D Reset aufgerufen werden muss.
 			 */
-			void PostD3DReset();
+			void PostD3DReset( );
 
 			/**
 			 * Ruft das Direct3D9 Device ab.
 			 */
-			LPDIRECT3DDEVICE9 GetDevice() const;
+			LPDIRECT3DDEVICE9 GetDevice( ) const;
 
 			/**
 			 * Prüft, ob nicht-quadratische Texturgrößen unterstützt werden.
 			 */
-			bool SupportsNonSquareTexture();
+			bool SupportsNonSquareTexture( );
 
 			/**
 			 * Prüft, ob nicht-2^x Texturgrößen unterstützt werden.
 			 */
-			bool SupportsNPOTTextures();
+			bool SupportsNPOTTextures( );
 
 			/**
 			 * Rechnet die Größe in eine unterstützt Größe um.
@@ -68,24 +65,24 @@ namespace OSHGui
 			 * \return umgewandelte Größe
 			 * \sa SupportsNonSquareTexture(), SupportsNPOTTextures()
 			 */
-			SizeF GetAdjustedSize(const SizeF &size);
+			SizeF GetAdjustedSize( const SizeF &size );
 
-			virtual RenderTargetPtr& GetDefaultRenderTarget() override;
-			virtual GeometryBufferPtr CreateGeometryBuffer() override;
-			virtual TextureTargetPtr CreateTextureTarget() override;
-			virtual TexturePtr CreateTexture() override;
-			virtual TexturePtr CreateTexture(const Misc::AnsiString &filename) override;
-			virtual TexturePtr CreateTexture(const SizeF &size) override;
+			virtual RenderTargetPtr &GetDefaultRenderTarget( ) override;
+			virtual GeometryBufferPtr CreateGeometryBuffer( ) override;
+			virtual TextureTargetPtr CreateTextureTarget( ) override;
+			virtual TexturePtr CreateTexture( ) override;
+			virtual TexturePtr CreateTexture( const Misc::AnsiString &filename ) override;
+			virtual TexturePtr CreateTexture( const SizeF &size ) override;
 
-			virtual void BeginRendering() override;
-			virtual void EndRendering() override;
-			virtual void SetDisplaySize(const SizeF &sz) override;
-			virtual const SizeF& GetDisplaySize() const override;
-			virtual const PointF& GetDisplayDPI() const override;
-			virtual uint32_t GetMaximumTextureSize() const override;
+			virtual void BeginRendering( ) override;
+			virtual void EndRendering( ) override;
+			virtual void SetDisplaySize( const SizeF &sz ) override;
+			virtual const SizeF &GetDisplaySize( ) const override;
+			virtual const PointF &GetDisplayDPI( ) const override;
+			virtual uint32_t GetMaximumTextureSize( ) const override;
 
 		protected:
-			void RegisterTexture(const std::shared_ptr<Direct3D9Texture> &texture);
+			void RegisterTexture( const std::shared_ptr< Direct3D9Texture > &texture );
 
 		private:
 			/**
@@ -93,33 +90,33 @@ namespace OSHGui
 			 *
 			 * \return Größe des Viewport
 			 */
-			SizeF GetViewportSize();
+			SizeF GetViewportSize( );
 			/**
 			 * Berechnet die nächste Zweierpotenz, falss \a size keine Zweierpotenz ist.
 			 *
 			 * \param size
 			 * \return nächste Zweierpotenz
 			 */
-			float GetSizeNextPOT(float size) const;
+			float GetSizeNextPOT( float size ) const;
 
 			/**
 			 * Entfernt ungültige Referenzen zu Objekten, für die ein Reset ausgeführt werden muss.
 			 */
-			void RemoveWeakReferences();
+			void RemoveWeakReferences( );
 
 			LPDIRECT3DDEVICE9 device;
-			
+
 			SizeF displaySize;
 			PointF displayDPI;
-			
+
 			RenderTargetPtr defaultTarget;
-			
-			typedef std::vector<std::weak_ptr<Direct3D9TextureTarget>> TextureTargetList;
+
+			typedef std::vector< std::weak_ptr< Direct3D9TextureTarget > > TextureTargetList;
 			TextureTargetList textureTargets;
-			
-			typedef std::vector<std::weak_ptr<Direct3D9Texture>> TextureList;
+
+			typedef std::vector< std::weak_ptr< Direct3D9Texture > > TextureList;
 			TextureList textures;
-			
+
 			uint32_t maxTextureSize;
 			bool supportNPOTTex;
 			bool supportNonSquareTex;

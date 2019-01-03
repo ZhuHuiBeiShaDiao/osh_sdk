@@ -1,47 +1,22 @@
-/* This file is part of oshgui_sdk by alpine971, licensed under the MIT license:
-*
-* MIT License
-*
-* Copyright (c) alpine971 2018
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in all
-* copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-*/
-
 #pragma once
 
-namespace hooks{
-	namespace fn{
+namespace hooks {
+	namespace fn {
 		using Present_t = HRESULT (__stdcall *)( IDirect3DDevice9 *, const RECT *, const RECT *, HWND, const RGNDATA * );
 		using Reset_t = HRESULT (__stdcall *)( IDirect3DDevice9 *, D3DPRESENT_PARAMETERS * );
 	}
+
 	HRESULT __stdcall Present( IDirect3DDevice9 *device, const RECT *pSourceRect, const RECT *pDestRect,
-		HWND hDestWindowOverride, const RGNDATA *pDirtyRegion );
+	                           HWND hDestWindowOverride, const RGNDATA *pDirtyRegion );
 	HRESULT __stdcall Reset( IDirect3DDevice9 *device, D3DPRESENT_PARAMETERS *pPresentationParameters );
 }
 
-extern hooks::fn::Present_t original_present;
-extern hooks::fn::Reset_t original_reset;
-
 class c_hooks {
-	uintptr_t present_address;
-	uintptr_t reset_address;
+	uintptr_t m_d3d9_vmt = pattern::find< uintptr_t >( GetModuleHandleA( "shaderapidx9.dll" ), "A1 ? ? ? ? 50 8B 08 FF 51 0C" );
+
 public:
+	std::unique_ptr< c_vmt > m_directx;
+
 	void init( );
 	void unload( );
 };

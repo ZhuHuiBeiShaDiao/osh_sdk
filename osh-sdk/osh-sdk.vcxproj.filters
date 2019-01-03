@@ -1,85 +1,115 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="source development kit">
+    <Filter Include="sdk">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="source development kit\sdk">
+    <Filter Include="sdk\sdk">
       <UniqueIdentifier>{aacd3ef4-d565-43a8-bf1f-4fa6c1c20a1b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source development kit\renderer">
+    <Filter Include="sdk\renderer">
       <UniqueIdentifier>{3bb79161-6904-434e-98df-31e00289a6ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source development kit\renderer\d3d9">
+    <Filter Include="sdk\renderer\d3d9">
       <UniqueIdentifier>{46e15d04-ed30-481d-9a62-5056b028ac0b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source development kit\hooks">
+    <Filter Include="sdk\hooks">
       <UniqueIdentifier>{f951b6a8-6d13-4010-b8e7-a236a97b359c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source development kit\utils">
+    <Filter Include="sdk\utils">
       <UniqueIdentifier>{60c5216b-adf7-4600-a075-63e74c802b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\input">
+      <UniqueIdentifier>{10f09c43-aa97-4264-8364-38aa14552c59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\utils\pattern">
+      <UniqueIdentifier>{1cdf3dd0-2b7f-4dec-83f2-eca231bdaa2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\utils\vmt">
+      <UniqueIdentifier>{bab17a06-dc58-4d0a-8b38-145eba0b3e91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\utils\misc_util">
+      <UniqueIdentifier>{bc3872a1-e0e6-49c1-90fe-0c5a2ae50765}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\oshgui\Drawing\Direct3D9\Direct3D9GeometryBuffer.cpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClCompile>
     <ClCompile Include="..\oshgui\Drawing\Direct3D9\Direct3D9Renderer.cpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClCompile>
     <ClCompile Include="..\oshgui\Drawing\Direct3D9\Direct3D9Texture.cpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClCompile>
     <ClCompile Include="..\oshgui\Drawing\Direct3D9\Direct3D9TextureTarget.cpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClCompile>
     <ClCompile Include="..\oshgui\Drawing\Direct3D9\Direct3D9ViewportTarget.cpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClCompile>
     <ClCompile Include="renderer\renderer.cpp">
-      <Filter>source development kit\renderer</Filter>
+      <Filter>sdk\renderer</Filter>
     </ClCompile>
     <ClCompile Include="hooks\hooks.cpp">
-      <Filter>source development kit\hooks</Filter>
-    </ClCompile>
-    <ClCompile Include="utils\pattern.cpp">
-      <Filter>source development kit\utils</Filter>
+      <Filter>sdk\hooks</Filter>
     </ClCompile>
     <ClCompile Include="entry.cpp">
-      <Filter>source development kit</Filter>
+      <Filter>sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="input\input.cpp">
+      <Filter>sdk\input</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\pattern.cpp">
+      <Filter>sdk\utils\pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\vmt.cpp">
+      <Filter>sdk\utils\vmt</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\util.cpp">
+      <Filter>sdk\utils\misc_util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sdk\includes.h">
-      <Filter>source development kit\sdk</Filter>
+      <Filter>sdk\sdk</Filter>
     </ClInclude>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9GeometryBuffer.hpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClInclude>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9Renderer.hpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClInclude>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9RenderTarget.hpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClInclude>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9Texture.hpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClInclude>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9TextureTarget.hpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClInclude>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9ViewportTarget.hpp">
-      <Filter>source development kit\renderer\d3d9</Filter>
+      <Filter>sdk\renderer\d3d9</Filter>
     </ClInclude>
     <ClInclude Include="renderer\renderer.h">
-      <Filter>source development kit\renderer</Filter>
+      <Filter>sdk\renderer</Filter>
     </ClInclude>
     <ClInclude Include="hooks\hooks.h">
-      <Filter>source development kit\hooks</Filter>
+      <Filter>sdk\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="input\input.h">
+      <Filter>sdk\input</Filter>
     </ClInclude>
     <ClInclude Include="utils\pattern.h">
-      <Filter>source development kit\utils</Filter>
+      <Filter>sdk\utils\pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\vmt.h">
+      <Filter>sdk\utils\vmt</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\util.h">
+      <Filter>sdk\utils\misc_util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,35 +1,10 @@
-/* This file is part of oshgui_sdk by alpine971, licensed under the MIT license:
-*
-* MIT License
-*
-* Copyright (c) alpine971 2018
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in all
-* copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-*/
-
 #include "../sdk/includes.h"
 #include "renderer.h"
 
 using namespace renderer;
 
-c_renderer::c_renderer()
-	: m_renderer{ }, m_instance{ nullptr } { }
+c_renderer::c_renderer( )
+	: m_renderer{}, m_instance{ nullptr } { }
 
 void c_renderer::init( IDirect3DDevice9 *device ) {
 	m_renderer = std::make_unique< OSHGui::Drawing::Direct3D9Renderer >( device );
@@ -55,30 +30,30 @@ void c_renderer::start_drawing( IDirect3DDevice9 *device ) {
 	device->GetRenderState( D3DRS_COLORWRITEENABLE, &m_old_color_write_enable );
 	device->SetRenderState( D3DRS_COLORWRITEENABLE, 0xFFFFFFFF );
 
-	m_geometry = m_instance->GetRenderer().CreateGeometryBuffer();
+	m_geometry = m_instance->GetRenderer( ).CreateGeometryBuffer( );
 	if( !m_geometry )
 		return;
 
-	m_render_target = m_instance->GetRenderer().GetDefaultRenderTarget();
+	m_render_target = m_instance->GetRenderer( ).GetDefaultRenderTarget( );
 	if( !m_render_target )
 		return;
 
-	m_instance->GetRenderer().BeginRendering();
+	m_instance->GetRenderer( ).BeginRendering( );
 }
 
 void c_renderer::end_drawing( IDirect3DDevice9 *device ) const {
 	if( !m_render_target || !m_instance )
 		return;
 
-	m_render_target->Activate();
+	m_render_target->Activate( );
 
 	m_render_target->Draw( *m_geometry );
 
-	m_render_target->Deactivate();
+	m_render_target->Deactivate( );
 
-	m_instance->Render();
+	m_instance->Render( );
 
-	m_instance->GetRenderer().EndRendering();
+	m_instance->GetRenderer( ).EndRendering( );
 
 	if( !m_old_color_write_enable )
 		return;

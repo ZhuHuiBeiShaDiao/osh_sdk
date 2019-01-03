@@ -14,47 +14,44 @@
 
 #include <d3d9.h>
 
-namespace OSHGui
-{
-	namespace Drawing
-	{
+namespace OSHGui {
+	namespace Drawing {
 		class Direct3D9Texture;
 
 		/**
 		 * Die Direct3D9 Variante des TextureTarget.
 		 */
-		class OSHGUI_EXPORT Direct3D9TextureTarget : public Direct3D9RenderTarget<TextureTarget>
-		{
+		class OSHGUI_EXPORT Direct3D9TextureTarget : public Direct3D9RenderTarget< TextureTarget > {
 		public:
 			/**
 			 * Konstruktor der Klasse.
 			 *
 			 * \param owner Renderer Objekt, das das RenderTarget erstellt hat
 			 */
-			Direct3D9TextureTarget(Direct3D9Renderer& owner);
+			Direct3D9TextureTarget( Direct3D9Renderer &owner );
 			/**
 			 * Destruktor der Klasse.
 			 */
-			virtual ~Direct3D9TextureTarget();
+			virtual ~Direct3D9TextureTarget( );
 
 			/**
 			 * Hilfsfunktion, die vor einem D3D Reset vom Renderer aufgerufen wird.
 			 */
-			void PreD3DReset();
+			void PreD3DReset( );
 			/**
 			 * Hilfsfunktion, die nach einem D3D Reset vom Renderer aufgerufen wird.
 			 */
-			void PostD3DReset();
+			void PostD3DReset( );
 
-			virtual void Activate() override;
-			virtual void Deactivate() override;
-			
-			virtual bool IsImageryCache() const override;
-			
-			virtual void Clear() override;
-			virtual TexturePtr GetTexture() const override;
-			virtual void DeclareRenderSize(const SizeF& size) override;
-			virtual bool IsRenderingInverted() const override;
+			virtual void Activate( ) override;
+			virtual void Deactivate( ) override;
+
+			virtual bool IsImageryCache( ) const override;
+
+			virtual void Clear( ) override;
+			virtual TexturePtr GetTexture( ) const override;
+			virtual void DeclareRenderSize( const SizeF &size ) override;
+			virtual bool IsRenderingInverted( ) const override;
 
 		protected:
 			static const float DefaultSize;
@@ -62,30 +59,30 @@ namespace OSHGui
 			/**
 			 * Erzeugt die Textur, auf die gezeichnet wird.
 			 */
-			void InitialiseRenderTexture();
+			void InitialiseRenderTexture( );
 			/**
 			 * Löscht die Textur, auf die gezeichnet wird.
 			 */
-			void CleanupRenderTexture();
+			void CleanupRenderTexture( );
 			/**
 			 * Aktuallisiert die Größe der Textur.
 			 */
-			void ResizeRenderTexture();
+			void ResizeRenderTexture( );
 
 			/**
 			 * Legt die Textur als Ziel für Zeichenoperationen fest.
 			 */
-			void EnableRenderTexture();
+			void EnableRenderTexture( );
 			/**
 			 * Stellt das vorherige Ziel für Zeichenoperationen wieder her.
 			 */
-			void DisableRenderTexture();
+			void DisableRenderTexture( );
 
 			LPDIRECT3DTEXTURE9 d3d9Texture;
 			LPDIRECT3DSURFACE9 surface;
-			
-			std::shared_ptr<Direct3D9Texture> texture;
-			
+
+			std::shared_ptr< Direct3D9Texture > texture;
+
 			LPDIRECT3DSURFACE9 surfaceBackup;
 		};
 	}

@@ -157,8 +157,11 @@
     <ClCompile Include="..\oshgui\Drawing\Direct3D9\Direct3D9ViewportTarget.cpp" />
     <ClCompile Include="entry.cpp" />
     <ClCompile Include="hooks\hooks.cpp" />
+    <ClCompile Include="input\input.cpp" />
     <ClCompile Include="renderer\renderer.cpp" />
     <ClCompile Include="utils\pattern.cpp" />
+    <ClCompile Include="utils\util.cpp" />
+    <ClCompile Include="utils\vmt.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9GeometryBuffer.hpp" />
@@ -168,9 +171,12 @@
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9TextureTarget.hpp" />
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9ViewportTarget.hpp" />
     <ClInclude Include="hooks\hooks.h" />
+    <ClInclude Include="input\input.h" />
     <ClInclude Include="renderer\renderer.h" />
     <ClInclude Include="sdk\includes.h" />
     <ClInclude Include="utils\pattern.h" />
+    <ClInclude Include="utils\util.h" />
+    <ClInclude Include="utils\vmt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

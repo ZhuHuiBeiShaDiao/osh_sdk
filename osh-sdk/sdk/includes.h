@@ -40,10 +40,14 @@ using ulong_t = unsigned long;
 #include "../../oshgui/Input/Input.hpp"
 
 #include "../renderer/renderer.h"
+#include "../input/input.h"
 #include "../utils/pattern.h"
+#include "../utils/util.h"
+#include "../utils/vmt.h"
 
 using namespace renderer;
-extern c_renderer g_renderer;
+
+extern std::unique_ptr< c_renderer > g_renderer;
 
 using OSHColor = OSHGui::Drawing::Color;
 
