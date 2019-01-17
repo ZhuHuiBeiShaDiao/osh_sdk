@@ -1,4 +1,4 @@
-#include "../sdk/includes.h"
+#include "../includes.h"
 #include "vmt.h"
 
 c_vmt::c_vmt( ): m_vmt_base{ 0 }, m_old_vmt{ nullptr }, m_total_methods{ 0 }, m_new_vmt{ nullptr },

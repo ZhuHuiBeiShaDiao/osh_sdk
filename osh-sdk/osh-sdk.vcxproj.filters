@@ -5,9 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="sdk\sdk">
-      <UniqueIdentifier>{aacd3ef4-d565-43a8-bf1f-4fa6c1c20a1b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="sdk\renderer">
       <UniqueIdentifier>{3bb79161-6904-434e-98df-31e00289a6ba}</UniqueIdentifier>
     </Filter>
@@ -31,6 +28,9 @@
     </Filter>
     <Filter Include="sdk\utils\misc_util">
       <UniqueIdentifier>{bc3872a1-e0e6-49c1-90fe-0c5a2ae50765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\menu">
+      <UniqueIdentifier>{ec111f69-39ee-463e-be1e-324948d771f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,11 +70,11 @@
     <ClCompile Include="utils\util.cpp">
       <Filter>sdk\utils\misc_util</Filter>
     </ClCompile>
+    <ClCompile Include="menu\menu.cpp">
+      <Filter>sdk\menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sdk\includes.h">
-      <Filter>sdk\sdk</Filter>
-    </ClInclude>
     <ClInclude Include="..\oshgui\Drawing\Direct3D9\Direct3D9GeometryBuffer.hpp">
       <Filter>sdk\renderer\d3d9</Filter>
     </ClInclude>
@@ -110,6 +110,12 @@
     </ClInclude>
     <ClInclude Include="utils\util.h">
       <Filter>sdk\utils\misc_util</Filter>
+    </ClInclude>
+    <ClInclude Include="includes.h">
+      <Filter>sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\menu.h">
+      <Filter>sdk\menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,7 +11,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "oshgui lib", "oshgui\Projects\VS2017\OSHGui_StaticLibrary.vcxproj", "{296FB7C3-29B9-4111-9243-6EB8CB71D458}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D8FFBB21-1CB1-4C27-BE8C-F7D8C211DE90} = {D8FFBB21-1CB1-4C27-BE8C-F7D8C211DE90}
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01} = {414251B2-E3BE-411F-A90B-7C2CD64E3D01}
 		{2BDBACF9-9942-4157-8762-B4A024071848} = {2BDBACF9-9942-4157-8762-B4A024071848}
 	EndProjectSection
 EndProject
@@ -20,8 +19,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FreeType", "oshgui\Dependencies\Source\FreeType\FreeType.2017.vcxproj", "{2BDBACF9-9942-4157-8762-B4A024071848}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleImageLoader", "oshgui\Dependencies\Source\SimpleImageLoader\SimpleImageLoader.2017.vcxproj", "{D8FFBB21-1CB1-4C27-BE8C-F7D8C211DE90}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JsonCpp", "oshgui\Dependencies\Source\JsonCpp\JsonCpp.2017.vcxproj", "{414251B2-E3BE-411F-A90B-7C2CD64E3D01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,14 +60,6 @@ Global
 		{D8FFBB21-1CB1-4C27-BE8C-F7D8C211DE90}.Release|x64.Build.0 = Release|x64
 		{D8FFBB21-1CB1-4C27-BE8C-F7D8C211DE90}.Release|x86.ActiveCfg = Release|Win32
 		{D8FFBB21-1CB1-4C27-BE8C-F7D8C211DE90}.Release|x86.Build.0 = Release|Win32
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Debug|x64.ActiveCfg = Debug|x64
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Debug|x64.Build.0 = Debug|x64
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Debug|x86.ActiveCfg = Debug|Win32
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Debug|x86.Build.0 = Debug|Win32
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Release|x64.ActiveCfg = Release|x64
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Release|x64.Build.0 = Release|x64
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Release|x86.ActiveCfg = Release|Win32
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,7 +67,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2BDBACF9-9942-4157-8762-B4A024071848} = {3A9710C9-EEE6-4276-81A3-A80A1CA892BC}
 		{D8FFBB21-1CB1-4C27-BE8C-F7D8C211DE90} = {3A9710C9-EEE6-4276-81A3-A80A1CA892BC}
-		{414251B2-E3BE-411F-A90B-7C2CD64E3D01} = {3A9710C9-EEE6-4276-81A3-A80A1CA892BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {418E8F42-88C8-4EE9-9CE2-9DA7FBDE536C}

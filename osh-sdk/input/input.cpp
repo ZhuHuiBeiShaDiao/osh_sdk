@@ -1,4 +1,4 @@
-#include "../sdk/includes.h"
+#include "../includes.h"
 #include "input.h"
 
 std::unique_ptr< c_input > g_input = std::make_unique< c_input >( );

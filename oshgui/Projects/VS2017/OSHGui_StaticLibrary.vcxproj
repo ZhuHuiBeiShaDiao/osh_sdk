@@ -711,8 +711,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>jsoncpp.lib;freetype.lib;simpleimageloader.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\Dependencies\Lib\$(PlatformTarget)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib;simpleimageloader.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)oshgui\Dependencies\Lib\$(PlatformTarget)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

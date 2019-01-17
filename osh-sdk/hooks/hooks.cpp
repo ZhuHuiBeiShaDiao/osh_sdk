@@ -1,4 +1,4 @@
-#include "../sdk/includes.h"
+#include "../includes.h"
 #include "hooks.h"
 
 c_hooks g_hooks;
@@ -15,7 +15,7 @@ void c_hooks::unload( ) {
 }
 
 void watermark( ) {
-	static auto size = g_renderer->get_instance(  )->GetRenderer( ).GetDisplaySize( );
+	auto size = g_renderer->get_instance(  )->GetRenderer( ).GetDisplaySize( );
 
 	time_t t = std::time( nullptr );
 	tm tm = *std::localtime( &t );
@@ -24,8 +24,8 @@ void watermark( ) {
 	oss << std::put_time( &tm, "%I:%M%p" );
 	auto time = oss.str( );
 
-	g_renderer->ansi_text( g_renderer->get_font( FONT_VERDANA_7PX ), OSHColor( 0.8f, 1.f, 1.f, 1.f ),
-	                      OSHColor( 0.f, 0.f, 0.f, 0.f ), size.Width - 268, size.Height - size.Height + 22, 0,
+	g_renderer->ansi_text( g_renderer->get_font( FONT_VERDANA_7PX ), OSHColor::White( ),
+	                      OSHColor::Black( ), size.Width - 268, size.Height - size.Height + 22, OUTLINED,
 	                      "oshgui sdk | %s", time.c_str( ) );
 }
 
@@ -34,10 +34,15 @@ HRESULT __stdcall hooks::Present( IDirect3DDevice9 *device, const RECT *pSourceR
 	if( !once ) {
 		g_renderer->init( device );
 		g_input->init( "Valve001", g_renderer->get_instance(  ) );
+		g_menu.init( );
 		once = true;
 	}
 
 	g_renderer->start_drawing( device );
+
+	g_renderer->ansi_text( g_renderer->get_font( FONT_VERDANA_7PX ), OSHColor::Red( ),
+		OSHColor::Black( ), 10, 200, OUTLINED,
+		std::to_string( g_menu.test ) );
 
 	watermark( );
 
