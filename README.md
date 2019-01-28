@@ -7,7 +7,7 @@ A simple oshgui sdk for any game, this is just a directx 9 example, has a simple
 
 ## Requirements
 
-* C++17 compilant compiler
+* C++17 compliant compiler
 * [DirectX SDK](https://www.microsoft.com/en-ca/download/details.aspx?id=6812)
 
 ## Credits
